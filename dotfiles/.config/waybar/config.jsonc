@@ -32,7 +32,7 @@
     },
 
     "mpris": {
-        "format": "{status_icon} {artist} - {title}",
+        "format": "{artist} - {title}",
         "format-paused": "{status_icon} {artist} - {title}",
         "format-stopped": "",
         "format-disconnected": "",
