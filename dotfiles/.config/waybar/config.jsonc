@@ -86,7 +86,7 @@
     "network": {
         "format": "{icon}",
         "format-wifi": "{icon}",
-        "format-ethernet": "󰈀",
+        "format-ethernet": "",
         "tooltip-format": "{essid}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "󰤮 ",
