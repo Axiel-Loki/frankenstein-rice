@@ -1,0 +1,144 @@
+/*-----Configuration-----*/
+configuration {
+    modes: "drun";
+    font:  "SF Pro Text 12";
+    drun-display-format: "{name}";
+}
+
+/*-----Global-----*/
+* {
+    /* Paleta neutra */
+    /*color0: #1e1e1ed3;*/   /* fundo base */
+    color0: rgba(0, 0, 0, 0.666);
+    color1: #2a2a2a;   /* superfície */
+    color2: #1e1e1ed3; /* realce cinza */
+    color3: #ffffffff; /* bordas */
+    color4: #b5b5b5;   /* texto secundário */
+    color5: #eeeeec;   /* texto principal */
+    color6: #c0c0c0;   /* highlight suave */
+    color7: #f0f0f0;   /* branco quase puro */
+    color8: #181818;   /* fundo mais escuro */
+    color9: #242424;   /* fundo alternativo */
+
+    fg-highlight: @color6;
+
+    bg-entry: @color1;
+    fg-entry: @color5;
+    fg-placeholder: #b5b5b580;
+
+    bg-listview: @color0;
+    fg-element: @color5;
+
+    bg-element-selected: @color2;
+    fg-element-selected: #ffffff;
+    border-color-element-selected: @color6;
+
+    bg-inputbar: @color0;
+
+    border-color: @color3;
+
+    // bordas suaves
+    br: 1px;
+
+    border-size-window: 2px;
+    border-size-element-selected: 2px;
+
+    spacing: 0;
+}
+
+/*-----Main Window-----*/
+window {
+    transparency: "real";
+    background-color: transparent;
+
+    padding: 0;
+
+    children: [mainbox];
+
+    border: @border-size-window;
+    border-color: @border-color;
+
+    border-radius: @br;
+
+    width: 40%;
+}
+
+/*-----Main Box-----*/
+mainbox {
+    children: [inputbar, listview];
+    orientation: vertical;
+}
+
+/*-----Input Bar-----*/
+inputbar {
+    children: [entry];
+    background-color: @bg-inputbar;
+}
+
+entry {
+    color: @fg-entry;
+    placeholder-color: @fg-placeholder;
+    background-color: @bg-entry;
+
+    placeholder: "Search";
+
+    text-transform: bold;
+    border-radius: @br;
+
+    padding: 12px;
+    margin: 10px;
+
+    vertical-align: 0.5;
+    border: 0;
+}
+
+/*-----List View-----*/
+listview {
+    scrollbar: false;
+    border: 0;
+    lines: 8;
+
+    background-color: @bg-listview;
+    padding: 10px;
+}
+
+element {
+    children: [element-icon, element-text];
+    spacing: 10px;
+    border-radius: @br;
+}
+
+element-icon {
+    vertical-aling: 0.5;
+    margin: 0 0 0 10px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-transform: bold;
+
+    border-radius: @br;
+
+    color: @fg-element;
+    highlight: @fg-highlight;
+
+    padding: 5px;
+    margin: 10px 10px 10px 0;
+}
+
+element selected.normal {
+    background-color: @bg-element-selected;
+
+    border: @border-size-element-selected;
+    border-color: @border-color-element-selected;
+}
+
+element-text selected {
+    color: @fg-element-selected;
+    text-transform: bold;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+}

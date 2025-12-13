@@ -1,0 +1,185 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 5,
+    
+    "modules-left": ["custom/archicon", "hyprland/workspaces"],
+    "modules-center": ["mpris"],
+    "modules-right": ["group/tray-expander", "custom/power", "network", "pulseaudio", "backlight", "battery", "clock"],
+
+    "custom/archicon": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "<span size='larger'>{icon}</span>",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "\uf444",
+            "default": "\uf4c3"
+        },
+        "icon-size": 10,
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+
+    "mpris": {
+        "format": "{status_icon} {artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
+        "format-stopped": "",
+        "format-disconnected": "",
+        "player-icons": {
+            "default": "🎵",
+            "spotify": "",
+            "firefox": "",
+            "chromium": ""
+        },
+        "status-icons": {
+            "paused": "⏸",
+            "playing": "▶",
+            "stopped": "⏹"
+        },
+        "tooltip-format": "{title} - {artist}\nAlbum: {album}",
+        "tooltip": true,
+        "interval": 1,
+        "max-length": 30,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next"
+    },
+
+    "group/tray-expander": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "tray-group-item"
+        },
+        "modules": ["custom/expand-icon", "bluetooth", "tray"]
+    },
+
+    "custom/expand-icon": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 13
+    },
+
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": "Menu de energia",
+        "on-click": "wlogout",
+        "on-click-right": "systemctl suspend"
+    },
+
+    "network": {
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{essid}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "󰤮 ",
+        "tooltip": true,
+        "on-click": "kitty --class float -e nmtui",
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "{icon}  0%",
+        "format-muted": "",
+        "format-source": " {volume}%",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pamixer --toggle-mute",
+        "tooltip-format": "{volume}%",
+        "tooltip": true
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "tooltip": true,
+        "tooltip-format": "{percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-click": "kitty --class float -e nano ~/.config/hypr/settings/monitors.conf",
+        "scroll-step": 5
+    },
+
+    "battery": {
+        "states": {
+            "warning": 40,
+            "critical": 20
+        },
+        "format": "{icon}",
+        "format-charging": " {icon}",
+        "format-plugged": " {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 3,
+        "on-click": "kitty --class float -e sudo nano /etc/auto-cpufreq.conf",
+        "on-click-right": "kitty --class float -e sudo nano /sys/class/power_supply/BAT*/charge_control_end_threshold",
+        "tooltip-format": "Battery: {capacity}%"
+    },
+
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "format": "{:%a %d %b %H:%M}",
+        "interval": 1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#908d89'><b>{}</b></span>",
+                "days": "<span color='#ffffff'><b>{}</b></span>",
+                "today": "<span color='#908d89'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "bluetooth": {
+        "format": "󰂲",
+        "format-on": "{icon}",
+        "format-off": "{icon}",
+        "format-connected": "{icon}",
+        "format-icons": {
+            "on": "󰂯",
+            "off": "󰂲",
+            "connected": "󰂱"
+        },
+        "on-click": "blueman-manager",
+        "tooltip-format-connected": "{device_enumerate}"
+    }
+}

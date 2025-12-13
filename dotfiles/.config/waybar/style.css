@@ -1,0 +1,94 @@
+/* --- Global Styles --- */
+* {
+  font-family: "SF Pro Text", "JetBrainsMono Nerd Font Propo";
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- Waybar Container --- */
+#waybar {
+  background-color: rgba(0, 0, 0, 0.666);
+  color: #ffffff;
+  transition: background-color 0.5s;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* --- Workspaces --- */
+#workspaces,
+#workspaces button {
+  color: #e0e1fc;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  color: #e7fafd;
+}
+
+/* --- Clock --- */
+#clock {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+}
+
+/* --- Bluetooth --- */
+#bluetooth {
+  color: #888888;
+  font-size: 16px;
+  padding: 0.3rem 0.7rem;
+}
+
+#bluetooth.on {
+  color: #2196f3;
+}
+
+#bluetooth.connected {
+  color: #99d1db;
+}
+
+/* --- Network --- */
+#network {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+#network.disconnected {
+  color: #e78284;
+}
+
+/* --- Wireplumber --- */
+#wireplumber {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* --- Backlight --- */
+#backlight {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* --- Battery --- */
+#battery {
+  color: #99d1db;
+  padding: 0.3rem 0.7rem;
+}
+
+#battery.charging {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging) {
+  color: #e78284;
+}
+
+/* --- Custom Lock --- */
+#custom-lock {
+  color: #babbf1;
+}
