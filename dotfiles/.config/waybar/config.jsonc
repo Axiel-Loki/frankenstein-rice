@@ -86,13 +86,13 @@
     "network": {
         "format": "{icon}",
         "format-wifi": "{icon}",
-        "format-ethernet": "",
+        "format-ethernet": "",
         "tooltip-format": "{essid}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "󰤮 ",
         "tooltip": true,
         "on-click": "kitty --class float -e nmtui",
-        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
+        "format-icons": " "
     },
 
     "pulseaudio": {
