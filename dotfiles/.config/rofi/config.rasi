@@ -12,10 +12,10 @@ configuration {
     color0: rgba(0, 0, 0, 0.666);
     color1: #2a2a2a;   /* superfície */
     color2: #1e1e1ed3; /* realce cinza */
-    color3: #ffffffff; /* bordas */
+    color3: #555555; /* bordas */
     color4: #b5b5b5;   /* texto secundário */
-    color5: #eeeeec;   /* texto principal */
-    color6: #c0c0c0;   /* highlight suave */
+    color5: #aaaaaa;   /* texto principal */
+    color6: #555555;   /* highlight suave */
     color7: #f0f0f0;   /* branco quase puro */
     color8: #181818;   /* fundo mais escuro */
     color9: #242424;   /* fundo alternativo */
