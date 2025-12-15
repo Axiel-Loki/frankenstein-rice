@@ -6,7 +6,7 @@
     
     "modules-left": ["custom/archicon", "hyprland/workspaces"],
     "modules-center": ["mpris"],
-    "modules-right": ["group/tray-expander", "custom/power", "network", "pulseaudio", "backlight", "battery", "clock"],
+    "modules-right": ["group/tray-expander", "custom/notification", "custom/power", "network", "pulseaudio", "backlight", "battery", "clock"],
 
     "custom/archicon": {
         "format": " ",
@@ -123,7 +123,7 @@
         "format": "{icon}",
         "tooltip": true,
         "tooltip-format": "{percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "format-icons": [" 󰃞", " 󰃟", " 󰃠"],
         "on-click": "kitty --class float -e nano ~/.config/hypr/settings/monitors.conf",
         "scroll-step": 5
     },
@@ -181,5 +181,25 @@
         },
         "on-click": "blueman-manager",
         "tooltip-format-connected": "{device_enumerate}"
+    },
+
+      "custom/notification": {
+      "tooltip": false,
+      "format": "{icon} ",
+      "format-icons": {
+        "notification": "",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "",
+        "inhibited-notification": "",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "",
+        "dnd-inhibited-none": ""
+      },        "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "escape": true,
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw"
     }
 }
