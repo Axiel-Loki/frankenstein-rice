@@ -1,0 +1,70 @@
+[global]
+    # Tamanho da notificação: 280px de largura.
+    width = 280
+    
+    # Posição na tela (canto superior direito)
+    origin = top-right
+    
+    # Distância das bordas da tela (horizontal, vertical)
+    offset = 24
+
+    # Espaçamento interno entre o texto e as bordas
+    padding = 10
+    
+    # Espaçamento entre diferentes notificações
+    separator_height = 8
+    
+    # Fonte elegante com suporte a ícones (Nerd Fonts)
+    font = "JetBrainsMono Nerd Font Mono 10"
+    
+    # Borda fina e arredondada
+    frame_width = 2
+    frame_color = "#555555"
+    corner_radius = 2
+
+    # Tempo que a notificação normal permanece na tela (em milissegundos)
+    timeout = 5000 
+    
+    # Mostrar ícones se disponíveis
+    icons = true
+    
+    # Seguir o foco do mouse ou do teclado (normalmente 'none' para gestores de janela)
+    follow = none
+    
+    # Formato da mensagem: Título em negrito, seguido do corpo da mensagem
+    format = "<b>%s</b>\n%b"
+    
+    # Cor do separador entre título e corpo (usa a cor do frame)
+    separator_color = frame
+    
+    # Sempre rodar scripts (bom para ícones ou ações customizadas)
+    always_run_script = true
+    
+    # Ocultar o histórico com Ctrl+grave (~)
+    hides_with_idle = true
+    
+    # Teclas de atalho (fechar a notificação atual com Super+C)
+    # bind = mod+shift+c
+
+[urgency_low]
+    # Fundo cinza claro para notificações informativas/não urgentes
+    background = "#3c3c3c"
+    foreground = "#eeeeee"
+    # Tempo limite maior para leitura casual
+    timeout = 10000 
+
+[urgency_normal]
+    # Fundo cinza médio para notificações padrão (ex: e-mail)
+    background = "#2b2b2b"
+    foreground = "#ffffff"
+    # Tempo limite padrão
+    timeout = 5000
+
+[urgency_critical]
+    # Fundo vermelho escuro para alertas críticos (ex: bateria baixa)
+    background = "#cc0000"
+    foreground = "#ffffff"
+    # Tempo limite infinito até ser fechado manualmente
+    timeout = 0
+    # A notificação crítica pisca (opcional)
+    # flash = true
