@@ -15,7 +15,15 @@
   font-weight: 500;
 }
 
-/* --- Workspaces --- */
+/* --- MODULES LEFT --- */
+
+/* Custom Arch Icon */
+#custom-archicon {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* Workspaces */
 #workspaces,
 #workspaces button {
   color: #e0e1fc;
@@ -30,14 +38,25 @@
   color: #e7fafd;
 }
 
-/* --- Clock --- */
-#clock {
+/* --- MODULES CENTER --- */
+
+/* (vazio no seu caso) */
+
+/* --- MODULES RIGHT --- */
+
+/* Tray Expander Group */
+#custom-expand-icon {
   color: #ffffff;
-  font-weight: 500;
   padding: 0.3rem 0.7rem;
 }
 
-/* --- Bluetooth --- */
+/* Tray */
+#tray {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* Bluetooth (dentro do tray-expander) */
 #bluetooth {
   color: #888888;
   font-size: 16px;
@@ -45,14 +64,104 @@
 }
 
 #bluetooth.on {
-  color: #2196f3;
+  color: #ffffff;
 }
 
 #bluetooth.connected {
-  color: #99d1db;
+  color: #ffffff;
 }
 
-/* --- Network --- */
+/* CPU (dentro do tray-expander) */
+#cpu {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+#cpu.warning {
+  color: #ffa500;
+}
+
+#cpu.critical {
+  color: #ff0000;
+}
+
+/* Memory (dentro do tray-expander) */
+#memory {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+#memory.warning {
+  color: #ffa500;
+}
+
+#memory.critical {
+  color: #ff0000;
+}
+
+/* Disk (dentro do tray-expander) */
+#disk {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+#disk.warning {
+  color: #ffa500;
+}
+
+#disk.critical {
+  color: #ff0000;
+}
+
+/* Temperature (dentro do tray-expander) */
+#temperature {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+#temperature.critical {
+  color: #ff0000;
+}
+
+/* Custom Notification */
+#custom-notification {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* Custom Brightness */
+#custom-brightness {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* MPRIS Expander Group */
+#custom-music-icon {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* MPRIS Player */
+#mpris {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+#mpris.paused {
+  color: #888888;
+}
+
+#mpris.stopped {
+  color: #555555;
+}
+
+/* Custom Power */
+#custom-power {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* Network */
 #network {
   color: #ffffff;
   padding: 0.3rem 0.7rem;
@@ -62,19 +171,17 @@
   color: #e78284;
 }
 
-/* --- Wireplumber --- */
-#wireplumber {
+/* Pulseaudio */
+#pulseaudio {
   color: #ffffff;
   padding: 0.3rem 0.7rem;
 }
 
-/* --- Backlight --- */
-#backlight {
-  color: #ffffff;
-  padding: 0.3rem 0.7rem;
+#pulseaudio.muted {
+  color: #888888;
 }
 
-/* --- Battery --- */
+/* Battery */
 #battery {
   color: #99d1db;
   padding: 0.3rem 0.7rem;
@@ -88,7 +195,27 @@
   color: #e78284;
 }
 
-/* --- Custom Lock --- */
-#custom-lock {
-  color: #babbf1;
+#battery.critical:not(.charging) {
+  color: #ff0000;
+}
+
+/* Clock */
+#clock {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+}
+
+/* --- Additional Styles for Group Items --- */
+
+/* Tray group items */
+.tray-group-item {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+}
+
+/* MPRIS group items */
+.mpris-group-item {
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
 }
