@@ -1,144 +1,135 @@
-/*-----Configuration-----*/
 configuration {
-    modes: "drun";
-    font:  "SF Pro Text 12";
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "";
     drun-display-format: "{name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    terminal: "kitty";
+    font: "SF Pro Text 12";
 }
 
-/*-----Global-----*/
 * {
-    /* Paleta neutra */
-    /*color0: #1e1e1ed3;*/   /* fundo base */
-    color0: rgba(0, 0, 0, 0.666);
-    color1: #2a2a2a;   /* superfície */
-    color2: #1e1e1ed3; /* realce cinza */
-    color3: #555555; /* bordas */
-    color4: #b5b5b5;   /* texto secundário */
-    color5: #aaaaaa;   /* texto principal */
-    color6: #555555;   /* highlight suave */
-    color7: #f0f0f0;   /* branco quase puro */
-    color8: #181818;   /* fundo mais escuro */
-    color9: #242424;   /* fundo alternativo */
-
-    fg-highlight: @color6;
-
-    bg-entry: @color1;
-    fg-entry: @color5;
-    fg-placeholder: #b5b5b580;
-
-    bg-listview: @color0;
-    fg-element: @color5;
-
-    bg-element-selected: @color2;
-    fg-element-selected: #ffffff;
-    border-color-element-selected: @color6;
-
-    bg-inputbar: @color0;
-
-    border-color: @color3;
-
-    // bordas suaves
-    br: 1px;
-
-    border-size-window: 2px;
-    border-size-element-selected: 2px;
-
-    spacing: 0;
+    background: rgba(0, 0, 0, 0.9);
+    background-alt: rgba(0, 0, 0, 0);
+    foreground: rgba(255, 255, 255, 0.97);
+    selected: rgba(255, 255, 255, 0.10);
+    active: rgba(255, 255, 255, 0.10);
+    urgent: rgba(255, 85, 85, 0.67);
+    
+    border-colour: rgba(255, 255, 255, 0.10);
+    separatorcolor: transparent;
+    background-color: transparent;
+    text-color: @foreground;
 }
 
-/*-----Main Window-----*/
 window {
     transparency: "real";
-    background-color: transparent;
-
-    padding: 0;
-
-    children: [mainbox];
-
-    border: @border-size-window;
-    border-color: @border-color;
-
-    border-radius: @br;
-
+    location: center;
+    anchor: center;
+    fullscreen: false;
     width: 40%;
+    border-radius: 1px;
+    cursor: "default";
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.10);
 }
 
-/*-----Main Box-----*/
 mainbox {
-    children: [inputbar, listview];
-    orientation: vertical;
+    enabled: true;
+    spacing: 0px;
+    margin: 0px;
+    padding: 16px;
+    background-color: transparent;
+    children: [ "inputbar", "listview" ];
 }
 
-/*-----Input Bar-----*/
 inputbar {
-    children: [entry];
-    background-color: @bg-inputbar;
+    enabled: true;
+    spacing: 10px;
+    margin: 0px 0px 12px 0px;
+    padding: 10px 14px;
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.15);
+    text-color: @foreground;
+    children: [ "entry" ];
+}
+
+prompt {
+    enabled: true;
+    background-color: transparent;
+    text-color: inherit;
 }
 
 entry {
-    color: @fg-entry;
-    placeholder-color: @fg-placeholder;
-    background-color: @bg-entry;
-
-    placeholder: "Search";
-
-    text-transform: bold;
-    border-radius: @br;
-
-    padding: 12px;
-    margin: 10px;
-
-    vertical-align: 0.5;
-    border: 0;
+    enabled: true;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: text;
+    placeholder: "  Rofi Search";
+    placeholder-color: rgba(255, 255, 255, 0.50);
 }
 
-/*-----List View-----*/
 listview {
+    enabled: true;
+    columns: 1;
+    lines: 5;
+    cycle: true;
+    dynamic: true;
     scrollbar: false;
-    border: 0;
-    lines: 8;
-
-    background-color: @bg-listview;
-    padding: 10px;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 3px;
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: "default";
 }
 
 element {
-    children: [element-icon, element-text];
+    enabled: true;
     spacing: 10px;
-    border-radius: @br;
+    margin: 0px;
+    padding: 8px 10px;
+    border-radius: 1px;
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: pointer;
 }
 
-element-icon {
-    vertical-aling: 0.5;
-    margin: 0 0 0 10px;
-}
-
-element-text {
-    vertical-align: 0.5;
-    text-transform: bold;
-
-    border-radius: @br;
-
-    color: @fg-element;
-    highlight: @fg-highlight;
-
-    padding: 5px;
-    margin: 10px 10px 10px 0;
+element normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
 }
 
 element selected.normal {
-    background-color: @bg-element-selected;
-
-    border: @border-size-element-selected;
-    border-color: @border-color-element-selected;
+    background-color: rgba(101, 100, 100, 0.23);
+    text-color: @foreground;
 }
 
-element-text selected {
-    color: @fg-element-selected;
-    text-transform: bold;
-}
-
-element normal.normal,
 element alternate.normal {
     background-color: transparent;
+    text-color: @foreground;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 28px;
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
 }
